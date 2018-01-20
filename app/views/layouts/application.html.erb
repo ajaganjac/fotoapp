@@ -4,8 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title><%= content_for?(:title) ? yield(:title) : "PhotoApp" %></title>
     <%= csrf_meta_tags %>
+    
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+    <%= javascript_include_tag "https://js.stripe.com/v2/" %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
@@ -21,7 +25,7 @@
   </head>
   <body>
 
-    <div class="navbar navbar-default navbar-static-top">
+    <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
@@ -70,7 +74,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-12">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
@@ -78,7 +82,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2018</p>
+        <p>&copy; A. Jaganjac 2018</p>
       </footer>
 
     </div> <!-- /container -->
